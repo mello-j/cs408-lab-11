@@ -142,9 +142,15 @@ export function submitData(){
     let xhr = new XMLHttpRequest();
     xhr.open("PUT", apiRoute);
     xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            //output added item to the console for developers/debugging  
+            console.log("Successfully added: " + payload.id + "," + payload.name + "," + payload.price);
+            loadTable();  
+        }
+    };
     xhr.send(JSON.stringify(payload));
     //output the successfully added items to the console for developers/debugging
-    console.log("Successfully added: " + payload.id + "," + payload.name + "," + payload.price);
-    loadTable();
 }
 
