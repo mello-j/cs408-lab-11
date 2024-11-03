@@ -7,57 +7,46 @@
     <title>Test AWS Lambda</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <h1>Simple Demo for PUT, GET, and DELETE</h1>
-    <p id="lambda-info">
-        <!-- loaded with AJAX -->
-    </p>
-
+    <header>
+    <h1>My Simple Inventory App</h1>
+    <button id="load-data">Load All Items</button>    
+    </header> 
     <hr>
-    <button id="send-data">Send Data</button>
-    <p>Sends an example JSON object to the server with id 11111</p>
-    <script>
-        document.getElementById("send-data").onclick = function () {
-            let xhr = new XMLHttpRequest();
-            xhr.open("PUT", "Your Lambda here");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send(JSON.stringify({
-                "id": "6666666",
-                "price": 19,
-                "name": "test put value"
-            }));
-        }
-    </script>
-
-    <button id="load-data">Load Data</button>
-    <p>Loads data from the server</p>
-    <script>
-        document.getElementById("load-data").onclick = function () {
-            let lambda = document.getElementById("lambda-info");
-            let xhr = new XMLHttpRequest();
-            xhr.addEventListener("load", function () {
-                lambda.innerHTML = xhr.response;
-            });
-            xhr.open("GET", "Your Lambda here");
-            xhr.send();
-        }
-
-    </script>
-
+    <section>
+    <h2> Justin's Warehouse Data</h2>
+    <table id="data-table">
+        <caption>Inventory Data Table</caption>
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col" id="delete">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be inserted here-->
+        </tbody>
+    </table>
+    <section>
     <hr>
-    <button id="delete-data">Delete Data</button>
-    <p>Deletes a JSON object from the server with 11111</p>
-    <script>
-        document.getElementById("delete-data").onclick = function () {
-            let xhr = new XMLHttpRequest();
-            xhr.open("DELETE", "Your Lambda here");
-            xhr.setRequestHeader("Content-Type", "application/json");
-            xhr.send();
-        }
-    </script>
+    <section id="form">
+        <h2>Add New Item to Database</h2>
+        <form id="item-submission">
+            <label for="Item ID">ID: </label>
+            <input type="text" id="item-id" name="id" required placeholder="Enter an Item Id">
+            <label for="Item Name">Name: </label>
+            <input type="text" id="item-name" name="name" required placeholder="Enter an Item Name">
+            <label for="Item Price">Price: </label>
+            <input type="text" id="item-price" name="price" required placeholder="Enter an Item Price">
+            <input type="submit" value="Add Item">
+        </form>
+    </section>
+    <script type="module" src="js/main.js"></script>       
 </body>
 
 </html>
