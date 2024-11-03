@@ -1,8 +1,17 @@
 body {
+  background-color: black;
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 75%;
+  width: 70%;
+  color: #00FF00;
+  border: 5px solid #00FF00;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+hr {
+  border-color: #00FF00;
 }
 
 header {
@@ -12,7 +21,9 @@ header {
 }
 
 section{
+  width: 100%;
   padding: 10px;
+  justify-items: center;
 }
 
 table {
@@ -22,42 +33,81 @@ table {
   padding: 8px;
   border-collapse: collapse;
   justify-self: center;
+  justify-items: left;
 }
 
-h2 {
+h1, h2 {
   text-align: center;
+  color: #00FFFF
 }
 
 th {
-  background-color: #f2f2f2;
-  border: 1px solid #ddd;
+  border: 1px solid green;
   padding: 8px;
-  text-align: left;
 }
 
 td {
-  border: 1px solid #ddd;
+  border: 1px solid gray;
   padding: 8px;
-  text-align: left;
 }
 
 #form {
-  width: 50%;
-  justify-content: space-evenly;
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid greenyellow;
   padding: 10px;
   border-radius: 5px;;
+  margin-left: 20px;
+  width: 50%;
 }
 
-#form input {
-  display: flex;
-  margin: 5px;
-  padding: 5px;
+#form-header{
+  margin-bottom: 50px;
 }
 
+#item-submission {
+  display: grid;  
+  grid-template-columns: max-content 1fr;
+  gap: 30px;
+  margin-left: auto;
+}
 
-button {
+#load-data {
   border-radius: 5px;
   height: 30px;
   width : 200px;
+  background-color: #FF003C;
+  color: #00FF00;
+  font-size: large;
+}
+
+.delete-button {
+  border-radius: 5px;
+  height: 30px;
+  width : 100px;
+  background-color: #FF003C;
+  display: block;
+  margin: 0 auto;
+}
+
+#submit-button{
+  border-radius: 5px;
+  height: 30px;
+  background-color: #FF003C;
+  color: #00FF00;
+  grid-column: 2;
+  margin: 10px;
+  width: 50%;
+  justify-self: end;
+  font-size: large;
+}
+
+input {
+  background-color: black;  
+  color: #00FF00;          
+}
+
+::placeholder {              
+  color: #00FFFF;
+  opacity: 0.75;           
 }

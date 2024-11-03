@@ -19,7 +19,6 @@
     <section>
     <h2> Justin's Warehouse Data</h2>
     <table id="data-table">
-        <caption>Inventory Data Table</caption>
         <thead>
             <tr>
                 <th scope="col">Id</th>
@@ -35,7 +34,7 @@
     <section>
     <hr>
     <section id="form">
-        <h2>Add New Item to Database</h2>
+        <h2 id="form-header">Add New Item to Database</h2>
         <form id="item-submission">
             <label for="Item ID">ID: </label>
             <input type="text" id="item-id" name="id" required placeholder="Enter an Item Id">
@@ -43,7 +42,7 @@
             <input type="text" id="item-name" name="name" required placeholder="Enter an Item Name">
             <label for="Item Price">Price: </label>
             <input type="text" id="item-price" name="price" required placeholder="Enter an Item Price">
-            <input type="submit" value="Add Item">
+            <input type="submit" id="submit-button" value="Add Item">
         </form>
     </section>
     <script type="module" src="js/main.js"></script>       
